@@ -36,4 +36,4 @@ elif (love_score >= 70)  and (love_score <= 89):
 
 else:
     print(f"우리 결혼까지 생각했어요.   {love_score} 되나봄.")
-    
+    #

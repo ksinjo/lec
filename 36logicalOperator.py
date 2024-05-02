@@ -25,3 +25,4 @@ if wants_photo == "y":
 
 else:
     print("sorry, you have to grow taller before you can ride")
+    #
