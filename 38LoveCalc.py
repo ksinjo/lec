@@ -26,14 +26,14 @@ if (love_score <10) or (love_score >90) :
 elif (love_score >= 1)  and (love_score <= 30):
     print(f"사랑하지 마요. 영원한 짝사랑 금지된 사랑의 점수는 {love_score} 입니다.")
 elif (love_score >= 30)  and (love_score <= 50):
-    print(f" first는 아니지만 second or Third 이성친구 가능 제 점수는 {love_score} 입니다.")
+    print(f" 애증관계.. 점수는요!  {love_score} 입니다.")
 
 elif (love_score >= 50)  and (love_score <= 70):
     print(f" 둘중 하나가 꽃힌 상태 자 제 점수는용 {love_score} .")
 
 elif (love_score >= 70)  and (love_score <= 89):
-    print(f" 우리 동거까지 생각했어~ 제 점수는 요요요 {love_score} .")    
+    print(f" 사랑의 동반자  {love_score} .")    
 
 else:
-    print(f"우리 결혼까지 생각했어요.   {love_score} 되나봄.")
+    print(f" U'are my destiny  {love_score} .")
     #
