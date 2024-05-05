@@ -11,9 +11,41 @@ gp_symbols = int(input("기호는 몇개나 쓸꼬냥? \n"))
 gp_number = int(input("숫자는 몇개나 쓸래? \n"))
 
 # 비밀번호를 저장할 빈 문자열 
+# easy mode
+
+# password = ""
+# #gp_letters = 4
+# for char in range(1,gp_letters+1):
+#     password_list.append += (random.choice(letters))
+#     print(password)
+
+# for char in range(1,gp_symbols+1):
+#     password += random.choice(symbols)
+#     print(password)
+
+# for char in range(1,gp_number+1):
+#     password += random.choice(numbers)
+
+# print(password)
+
+# Hard Level
+password_list = []
+
+for char in range(1,gp_letters +1 ) :
+    password_list += random.choice(letters)
+
+for char in range(1,gp_symbols +1 ) :
+    password_list += random.choice(symbols)
+
+    
+for char in range(1,gp_number +1 ) :
+    password_list += random.choice(numbers)
+
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+
 password = ""
-#gp_letters = 4
-for char in range(1,gp_letters+1):
-    random_char = random.choice(letters)
-    password = password + random_char
-    print(password)
+for char in password_list:
+    password += char 
+print(f"U password is :  {password}")
