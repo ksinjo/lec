@@ -24,7 +24,7 @@ number_index = int(pos[1])-1
 
 map[number_index] [letter_index] = "Z"
 print("당신의 숨긴 구멍의 좌표는 아래와 같습니다.\n")
-print(f"{l1}\n,{l2}\n,{l3}\n,{l4}")
+print(f"{l1}\n,{l2}\n,{l3}\n,{l4}\n,{l5}")
 
 
 
