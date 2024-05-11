@@ -1,7 +1,4 @@
 #Step 4
-
-import random
-
 stages = ['''
   +---+
   |   |
@@ -58,7 +55,7 @@ stages = ['''
       |
 =========
 ''']
-
+import random
 end_of_game = False
 word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
@@ -102,6 +99,4 @@ while not end_of_game:
     if "_" not in display:
         end_of_game = True
         print("You win.")
-
-    #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
     print(stages[lives])
