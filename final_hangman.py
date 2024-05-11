@@ -3,7 +3,7 @@ from hangman_art import logo,stages
 import random
 # 목숨 추가 
 lives = 6
-
+x = 0
 
 print(logo)
 
@@ -31,6 +31,8 @@ while not end_of_game:
  
     if guess not in chosen_word:
         lives -= 1
+        x += 1
+        print(f"Y are trying {x} times")
         if lives == 0:
             end_of_game = True
             print("You lose.")
