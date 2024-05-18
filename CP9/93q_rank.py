@@ -18,10 +18,19 @@ student_scores = {
 # Scores 81 - 90: Grade = "Exceeds Expectations"
 # Scores 71 - 80: Grade = "Acceptable"
 # Scores 70 or lower: Grade = "Fail"
-
+# 지시사항에 원하는 것
+# grades 딕셔너리를 통해 점수에 해당하는 등급이 표시되길 원함
+# 새로운 딕셔너리에 학생과 등급만 표시되면 됨. 
 # 🚨 Don't change the code above 👆
 # TODO-1: Create an empty dictionary called student_grades.
-
+student_grades={}
 # TODO-2: Write your code below to add the grades to student_grades.👇
-
+for st in student_scores:
+    score = student_scores[st]
+    if score > 90:
+        student_grades[st]= "Outstanding"
+    else:
+        student_grades[st]= "Fail"
+    
 # 🚨 Don't change the code below 👇
+print(student_grades)
