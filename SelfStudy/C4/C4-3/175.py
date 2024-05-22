@@ -1,2 +1,9 @@
-n = 10
-q = range (0, int(n //2))
+def my_function(a):
+    if a < 40:
+        return
+        print("Terrible")
+    if a < 80:
+        return "Pass"
+    else:
+        return "Great"
+print(my_function(25))
