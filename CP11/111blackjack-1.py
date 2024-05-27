@@ -86,9 +86,9 @@ def compare(user_score, computer_score):
 #         return "U win"
 #     else:
 #         return "U lose"
-
+print(logo)
 def play_game():
-    print(logo)
+
 #Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
     user_cards = []
     computer_cards = []
