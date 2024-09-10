@@ -1,36 +1,54 @@
-from turtle import Turtle,Screen
+# import pygame
+# pygame.init()
+from turtle import Screen
+from snake import Snake #/ import Snake 
+from feedstuff import Feedstuff
 import time  #add  time module 
+from scoreboard import Scoreboard
+
+# pygame.display.set_caption("뱀 이다")
+
+# back = pygame.image.load("D:/python_project/lec/CP20/snake_game/back.png")
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
-screen.title("Bam Game")
+# screen_width= 600
+# screen_height= 600
+# screen = pygame.display.set_mode((screen_width,screen_height))
+# screen.bgpic("forest.png")
+screen.title("배미다 뱀이다냥!")
 screen.tracer(0) # Turn off animation effects
 
-start_pos = [(-20,0),(0,0),(20,0)]
+scoreboard = Scoreboard()
+snake = Snake() # / Create Instance 
+feedstuff = Feedstuff()
 
-new_s=[]  # Empty array for structuring
+# Empty array for structuring
 
-for pos in start_pos:
-    s_part = Turtle("square")
-    s_part.color("green")
-    s_part.penup() # No initial position drawing
-    s_part.goto(pos)
-    new_s.append(s_part) # Add object with coordinates to empty array
+screen.listen()
+screen.onkey(snake.up,"Up")
+screen.onkey(snake.down,"Down")
+screen.onkey(snake.left,"Left")
+screen.onkey(snake.right,"Right")
+
+
 
 game_is_on = True
 while game_is_on:
+    # screen.blit(back,(0,0))
+    # pygame.display.update()
     screen.update() # Structured snake body updated in a connected state
-    # for s in new_s:   
-    #     s.forward(25)
-    time.sleep(0.2)
+    time.sleep(0.1)
 
-    # The order in which the head, torso, and tail move when an object rotates.
-    for s_movement_index in range(len(new_s)-1, 0 ,-1):
-        mod_x = new_s[s_movement_index-1].xcor()
-        mod_y = new_s[s_movement_index-1].ycor()
-        new_s[s_movement_index].goto(mod_x,mod_y)
-    new_s[0].forward(20)
-    new_s[0].right(90)
+    snake.move()  #/ call the snake move method
+    if snake.head.distance(feedstuff) < 15:
+        feedstuff.refresh()
+        scoreboard.increase_score() # call Func
+      
+
+    if snake.head.xcor()>290 or snake.head.xcor() < -290 or snake.head.ycor()>290 or snake.head.ycor() < -290:
+        game_is_on = False
+        scoreboard.game_over()
 
 screen.exitonclick()
