@@ -11,17 +11,27 @@ class Snake():
     def __init__(self):
         self.new_s=[]  
         self.create_snake()
-        self.head = self.new_s[0] #  헤드 속성을 추가 
+        self.head = self.new_s[0]
+        self.tail = self.new_s[-1]
+        self.head.color("red") #  헤드 속성을 추가 
         # self.head = self.s[0] # 키 방향전환 시 
 
     def create_snake(self):
         for pos in start_pos:
-            s_part = Turtle("square")
-            s_part.color("green")
-            s_part.penup() # No initial position drawing
-            s_part.goto(pos)
-            self.new_s.append(s_part) # Add object with coordinates to empty array
+            self.add_segment(pos)    
+ 
+    def add_segment(self,pos):
+        s_part = Turtle("square")
+        s_part.color("green")
+        s_part.penup() # No initial position drawing
+        s_part.goto(pos)
+        self.new_s.append(s_part) # Add object with coordinates to empty array
+   
 
+
+    def extend(self):
+        self.add_segment(self.new_s[-1].pos())
+        
 
     def move(self):
             for s_movement_index in range(len(self.new_s)-1, 0 ,-1):

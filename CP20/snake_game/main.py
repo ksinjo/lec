@@ -1,5 +1,10 @@
 # import pygame
 # pygame.init()
+
+# 추가적으로 만들어 보고 싶은 것
+# pygame 배경 바꾸기 
+# 뱀 길이에 따라 등급으로 나눠 종료 시 출력하기 
+
 from turtle import Screen
 from snake import Snake #/ import Snake 
 from feedstuff import Feedstuff
@@ -43,12 +48,23 @@ while game_is_on:
 
     snake.move()  #/ call the snake move method
     if snake.head.distance(feedstuff) < 15:
+        print(f"{int(snake.head.xcor())},{int(snake.head.ycor())} 뱀 사료를 겟토! ")
         feedstuff.refresh()
+        # print(f"next food x pos : {feedstuff.xcor}, next food y 좌표: {feedstuff.ycor}")
+        snake.extend()
         scoreboard.increase_score() # call Func
       
-
+    # check Collision wall.
     if snake.head.xcor()>290 or snake.head.xcor() < -290 or snake.head.ycor()>290 or snake.head.ycor() < -290:
         game_is_on = False
         scoreboard.game_over()
+
+    # check Collision head meet tail
+    for part in snake.new_s[1:]:
+        # if part == snake.head:
+        #     pass
+        if snake.head.distance(part) <10:
+            game_is_on = False
+            scoreboard.game_over2()
 
 screen.exitonclick()

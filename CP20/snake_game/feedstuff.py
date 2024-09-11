@@ -13,12 +13,12 @@ class Feedstuff(Turtle):
         # b = random.randint(0,255)
         self.color("deeppink")
         self.speed("fastest")
-        ran_x = random.randint(-280,280)
-        ran_y = random.randint(-280,280)
+        ran_x = random.randint(-200,200)
+        ran_y = random.randint(-200,200)
         self.goto(ran_x,ran_y)
         self.refresh()
 
     def refresh(self):
-        ran_x = random.randint(-280,280)
-        ran_y = random.randint(-280,280)
+        ran_x = random.randint(-200,200)
+        ran_y = random.randint(-200,200)
         self.goto(ran_x,ran_y)

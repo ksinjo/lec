@@ -1,4 +1,6 @@
 from turtle import Turtle
+
+
 ALIGNMENT = "center"
 FONT= ("courier",20,"normal")
 
@@ -27,4 +29,9 @@ class Scoreboard(Turtle):
     def game_over(self):
         self.goto(0,0)
         self.write(f"GAME OVER",align=ALIGNMENT, font=FONT)
-        print("어린 뱀 사망!")
+        print("뱀 망사 사망")
+
+    def game_over2(self):
+        self.goto(0,0)
+        self.write(f"GAME OVER",align=ALIGNMENT, font=FONT)
+        print("배고픈 당신은 자신의 꼬리를 먹고 죽었졍! 너 다이! ")
