@@ -5,9 +5,24 @@ class Ball(Turtle):
         super().__init__()
         self.color("white")
         self.shape("circle")
+        self.move_speed=0.07 
         self.penup()
+        self.x_move = 10  # 볼 x속성 추가 
+        self.y_move = 10  # 볼 y속성 추가 
         
     def move(self):
-        new_x = self.xcor() + 10
-        new_y = self.ycor() + 10 
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move 
         self.goto(new_x,new_y)
+
+    
+    def bounce_x(self):
+        self.x_move *= -1   
+        self.move_speed *= 0.9
+    
+    def bounce_y(self):
+        self.y_move *= -1
+
+    def reset_position(self):
+        self.goto(0,0)
+        self.bounce_x()
